@@ -14,13 +14,16 @@ public class HelloWorld {
 
 		// practice #4
 		printStars(5);
-		
+
 		// practice #5
 		calculateGradePoint(53);
 		calculateGradePoint(61);
 		calculateGradePoint(71);
 		calculateGradePoint(83);
 		calculateGradePoint(90);
+
+		// practice #6
+		calculateSumAndAverage();
 
 		// practice #10
 	}
@@ -69,9 +72,9 @@ public class HelloWorld {
 
 	// practice #5
 	private static void calculateGradePoint(int score) {
-		
-		String strGradePoint = ""; 
-		
+
+		String strGradePoint = "";
+
 		if (score >= 90) {
 			strGradePoint = "A";
 		} else if (score >= 80) {
@@ -83,8 +86,38 @@ public class HelloWorld {
 		} else {
 			strGradePoint = "F";
 		}
-		
+
 		System.out.println(String.format("%d is grade %s", score, strGradePoint));
+	}
+
+	// practice #6
+	private static void calculateSumAndAverage() {
+
+		final int STUDENT_COUNT = 10;
+
+		String strInput = "90, 28, 85,99,65,  76 ,72,A84,80, 72";
+		strInput = strInput.replace(" ", "");
+
+		String[] arrInput = strInput.split(",");
+		if (arrInput.length != STUDENT_COUNT) {
+			System.out.println("[E] Wrong student count");
+			return;
+		}
+
+		int sum = 0;
+
+		for (int i = 0; i < STUDENT_COUNT; i++) {
+			try {
+				int score = Integer.parseInt(arrInput[i]);
+				sum += score;
+			} catch (NumberFormatException ex) {
+				System.out.println(ex.toString());
+				System.out.println("[E] Cannot parse number");
+				return;
+			}
+		}
+
+		System.out.println(String.format("Sum %d, Avg %d", sum, sum / STUDENT_COUNT));
 	}
 
 	// practice #10
