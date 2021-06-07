@@ -11,6 +11,9 @@ public class HelloWorld {
 
 		// practice #3
 		printMultiplicationTable();
+		
+		// practice #4
+		printStars(5);
 
 		// practice #10
 	}
@@ -22,8 +25,9 @@ public class HelloWorld {
 
 	// practice #2
 	private static long sumFromTo(int x, int y) {
+
 		long value = 0;
-		for (int i = x; i < y; i++) {
+		for (int i = x; i <= y; i++) {
 			value += i;
 		}
 
@@ -36,6 +40,23 @@ public class HelloWorld {
 			for (int j = 1; j < 10; j++) {
 				System.out.println(String.format("%d x %d = %d", i, j, i * j));
 			}
+		}
+	}
+
+	// practice #4
+	private static void printStars(int count) {
+
+		if (count < 1) {
+			System.out.println("[E] Not enough stars");
+			return;
+		}
+
+		for (int i = 1; i <= count; i++) {
+			for (int j = 0; j < i; j++) {
+				System.out.print('*');
+			}
+			
+			System.out.println();
 		}
 	}
 
