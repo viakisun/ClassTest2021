@@ -11,9 +11,16 @@ public class HelloWorld {
 
 		// practice #3
 		printMultiplicationTable();
-		
+
 		// practice #4
 		printStars(5);
+		
+		// practice #5
+		calculateGradePoint(53);
+		calculateGradePoint(61);
+		calculateGradePoint(71);
+		calculateGradePoint(83);
+		calculateGradePoint(90);
 
 		// practice #10
 	}
@@ -55,9 +62,29 @@ public class HelloWorld {
 			for (int j = 0; j < i; j++) {
 				System.out.print('*');
 			}
-			
+
 			System.out.println();
 		}
+	}
+
+	// practice #5
+	private static void calculateGradePoint(int score) {
+		
+		String strGradePoint = ""; 
+		
+		if (score >= 90) {
+			strGradePoint = "A";
+		} else if (score >= 80) {
+			strGradePoint = "B";
+		} else if (score >= 70) {
+			strGradePoint = "C";
+		} else if (score >= 60) {
+			strGradePoint = "D";
+		} else {
+			strGradePoint = "F";
+		}
+		
+		System.out.println(String.format("%d is grade %s", score, strGradePoint));
 	}
 
 	// practice #10
