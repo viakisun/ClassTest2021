@@ -1,4 +1,6 @@
 public class HelloWorld {
+	
+	// 한글인코딩 테스트
 
 	public static void main(String[] args) {
 		System.out.println("Hello world!");
@@ -24,7 +26,7 @@ public class HelloWorld {
 
 		// practice #6
 		calculateSumAndAverage();
-		
+
 		// practice #7
 		calculateMultiArraySumAndAverage();
 
@@ -135,9 +137,14 @@ public class HelloWorld {
 			System.out.println(String.format("[%d] sum : %d , avg : %d", i + 1, sum, sum / scores[i].length));
 		}
 	}
-	
+
 	// practice #10
 	private static int add(int x, int y) {
 		return x + y;
+	}
+
+	private static int divide(int x, int y) {
+		// TODO :: vincent : 20210609 : divide by zero problem
+		return x / y;
 	}
 }
