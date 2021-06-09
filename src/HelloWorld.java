@@ -1,6 +1,6 @@
 public class HelloWorld {
 	
-	// ÇÑ±ÛÀÎÄÚµù Å×½ºÆ®
+	// í•œê¸€ì¸ì½”ë”© í…ŒìŠ¤íŠ¸
 
 	public static void main(String[] args) {
 		System.out.println("Hello world!");
