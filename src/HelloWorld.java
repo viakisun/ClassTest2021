@@ -34,6 +34,15 @@ public class HelloWorld {
 		// practice #8
 		String strFlipInput = "Kunsan University 2021";
 		flipCase(strFlipInput);
+		
+		// practice #9
+		String message = "Hello World";
+		String targetMessage = "Khoor Zruog";
+		String encryptedMessage = CaesarCipher.encrypt(message);
+		assert(encryptedMessage.equals(targetMessage));
+		
+		String decryptedMessage = CaesarCipher.decrypt(encryptedMessage);
+		assert(decryptedMessage.equals(message));
 
 		// practice #10
 	}
@@ -132,7 +141,14 @@ public class HelloWorld {
 
 	// practice #7
 	private static void calculateMultiArraySumAndAverage() {
-		int[][] scores = { { 90, 80, 80 }, { 85, 85, 90 }, { 95, 70, 75 }, { 80, 80, 90 }, { 90, 75, 80 }, };
+		int[][] scores = { 
+				{ 90, 80, 80 }, 
+				{ 85, 85, 90 }, 
+				{ 95, 70, 75 }, 
+				{ 80, 80, 90 }, 
+				{ 90, 75, 80 }, 
+		};
+		
 		for (int i = 0; i < scores.length; i++) {
 			int sum = 0;
 			for (int score : scores[i]) {
@@ -145,20 +161,19 @@ public class HelloWorld {
 	
 	// practice #8
 	private static void flipCase(String strInput) {
-		
+
 		String strOutput = "";
-		
+
 		for (int i = 0; i < strInput.length(); i++) {
 			char character = strInput.charAt(i);
-			
+
 			if (Character.isUpperCase(character)) {
 				strOutput += Character.toLowerCase(character);
-			}
-			else {
+			} else {
 				strOutput += Character.toUpperCase(character);
 			}
 		}
-		
+
 		System.out.println(String.format("[Input] : %s", strInput));
 		System.out.println(String.format("[Output] : %s", strOutput));
 	}
