@@ -1,6 +1,7 @@
 public class HelloWorld {
 	
 	// 한글인코딩 테스트
+	// GURUTESTGIMJE
 
 	public static void main(String[] args) {
 		System.out.println("Hello world!");
@@ -29,6 +30,10 @@ public class HelloWorld {
 
 		// practice #7
 		calculateMultiArraySumAndAverage();
+		
+		// practice #8
+		String strFlipInput = "Kunsan University 2021";
+		flipCase(strFlipInput);
 
 		// practice #10
 	}
@@ -100,7 +105,7 @@ public class HelloWorld {
 
 		final int STUDENT_COUNT = 10;
 
-		String strInput = "90, 28, 85,99,65,  76 ,72,A84,80, 72";
+		String strInput = "90, 28, 85,99,65,  76 ,72,84,80, 72";
 		strInput = strInput.replace(" ", "");
 
 		String[] arrInput = strInput.split(",");
@@ -136,6 +141,26 @@ public class HelloWorld {
 
 			System.out.println(String.format("[%d] sum : %d , avg : %d", i + 1, sum, sum / scores[i].length));
 		}
+	}
+	
+	// practice #8
+	private static void flipCase(String strInput) {
+		
+		String strOutput = "";
+		
+		for (int i = 0; i < strInput.length(); i++) {
+			char character = strInput.charAt(i);
+			
+			if (Character.isUpperCase(character)) {
+				strOutput += Character.toLowerCase(character);
+			}
+			else {
+				strOutput += Character.toUpperCase(character);
+			}
+		}
+		
+		System.out.println(String.format("[Input] : %s", strInput));
+		System.out.println(String.format("[Output] : %s", strOutput));
 	}
 
 	// practice #10
