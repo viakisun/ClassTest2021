@@ -45,6 +45,14 @@ public class HelloWorld {
 		assert(decryptedMessage.equals(message));
 
 		// practice #10
+		// (3 + 5 - 2) X 2 / 3 - 4
+		// (3 + 4 - 2) X 2 / 3 - 4 / 0
+		double result = ArithmeticCalculator.subtract(ArithmeticCalculator.divide(
+				ArithmeticCalculator.multiply(ArithmeticCalculator.subtract(ArithmeticCalculator.add(3, 5), 2), 2), 3),
+				4);
+		
+		System.out.println("==== Project #10 ====");
+		System.out.println("ArithmeticCalculator result : " + result);
 	}
 
 	// practice #1
@@ -176,15 +184,5 @@ public class HelloWorld {
 
 		System.out.println(String.format("[Input] : %s", strInput));
 		System.out.println(String.format("[Output] : %s", strOutput));
-	}
-
-	// practice #10
-	private static int add(int x, int y) {
-		return x + y;
-	}
-
-	private static int divide(int x, int y) {
-		// TODO :: vincent : 20210609 : divide by zero problem
-		return x / y;
 	}
 }
