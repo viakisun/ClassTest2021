@@ -53,6 +53,8 @@ public class HelloWorld {
 		
 		System.out.println("==== Project #10 ====");
 		System.out.println("ArithmeticCalculator result : " + result);
+		
+		//TODO::Fix bug::Divide by zero
 	}
 
 	// practice #1
