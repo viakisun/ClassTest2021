@@ -1,7 +1,7 @@
 
 public class CaesarCipher {
 	
-	private static final int SHIFT_CODE = 3;
+	private static int SHIFT_CODE = 3;
 	
 	public static String encrypt(String message) {
 		StringBuilder result = new StringBuilder();

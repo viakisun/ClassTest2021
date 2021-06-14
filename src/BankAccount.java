@@ -1,52 +1,40 @@
 
 public class BankAccount {
-	// 멤버 변수
-	// 예금주, 계좌번호, 잔액, 
-	private String mOwner;
-	private String owner;
-	private int mAccountNumber;
-	
-	private int accountNumber;
-	
-	private long mBalance;
-	
-	private int mAccountIndex = 0;
-	
-	// 생성자
-	// 계좌 개설
 
+	// member variable 
+	private String owner;
+	private int accountID;
+	private long balance;
+	
+	// constructor
 	public BankAccount(String owner) {
-		mOwner = owner;
 		this.owner = owner;
-		mBalance = 0;
-		
-		createAccount();
+		this.balance = 0;
+		this.accountID = BankUtil.getNewAccountID();
 	}
 	
-	private void createAccount( ) {
-		mAccountNumber = mAccountIndex;
-		this.accountNumber = 0;
-		mAccountIndex++;
+	// methods
+	public String getOwner() {
+		return this.owner;
 	}
 	
-	// 메서드
-	// 잔액 조회
-	// 입금
-	// 출금
+	public int getAccountID() {
+		return this.accountID;
+	}
 	
 	public long getBalance() {
-		return mBalance;
+		return this.balance;
 	}
 	
 	public void deposit(int amount) {
-		mBalance += amount;
+		this.balance += amount;
 	}
 	
 	public boolean withdraw(int amount) {
-		if (mBalance < amount)
+		if (this.balance < amount)
 			return false;
 		
-		mBalance -= amount;
+		this.balance -= amount;
 		return true;
 	}
 }
