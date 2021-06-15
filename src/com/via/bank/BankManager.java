@@ -11,14 +11,22 @@ public class BankManager {
 	private Scanner scanner;
 
 	public BankManager() {
-
-		System.out.println(BankMessage.MSG_HELLO);
-		this.scanner = new Scanner(System.in);
-
+		init();
 		runManager();
+		close();
+	}
+	
+	private void init() {
+		this.scanner = new Scanner(System.in);
+	}
+	
+	private void close() {
+		this.scanner.close();
 	}
 
 	private void runManager() {
+		
+		System.out.println(BankMessage.MSG_HELLO);
 
 		boolean bClose = false;
 
@@ -34,7 +42,7 @@ public class BankManager {
 			switch (cmd) {
 			case BankCommand.CMD_CREATE:
 				processCreate();
-				continue;
+				break;
 
 			case BankCommand.CMD_LOOKUP:
 				processLookup();
@@ -49,8 +57,6 @@ public class BankManager {
 				break;
 			}
 		}
-
-		this.scanner.close();
 	}
 
 	private int getCommand() {
