@@ -1,3 +1,4 @@
+package com.via.bank;
 
 public class BankAccount {
 

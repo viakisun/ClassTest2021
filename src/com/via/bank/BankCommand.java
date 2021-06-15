@@ -1,3 +1,4 @@
+package com.via.bank;
 
 public class BankCommand {
 	public static final int CMD_CREATE = 1;

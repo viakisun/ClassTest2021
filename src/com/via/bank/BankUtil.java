@@ -1,3 +1,4 @@
+package com.via.bank;
 
 public class BankUtil {
 	private static int lastAccountID = 1000000000;

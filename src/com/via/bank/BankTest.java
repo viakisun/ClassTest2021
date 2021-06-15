@@ -1,3 +1,4 @@
+package com.via.bank;
 import java.util.Scanner;
 
 public class BankTest {
