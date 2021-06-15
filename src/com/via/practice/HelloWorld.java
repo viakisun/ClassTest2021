@@ -1,3 +1,4 @@
+package com.via.practice;
 public class HelloWorld {
 	
 	// 한글인코딩 테스트

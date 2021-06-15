@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class BankManager {
 
+	// hashmap
 	private ArrayList<BankAccount> bankAccounts = new ArrayList<BankAccount>();
 	private Scanner scanner;
 
