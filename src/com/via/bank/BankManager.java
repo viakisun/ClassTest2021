@@ -1,13 +1,14 @@
 package com.via.bank;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BankManager {
 
 	// hashmap
-	private ArrayList<BankAccount> bankAccounts = new ArrayList<BankAccount>();
+	private HashMap<Integer, BankAccount> bankAccounts = new HashMap<>();
 	private Scanner scanner;
 
 	public BankManager() {
@@ -76,7 +77,7 @@ public class BankManager {
 		String inputName = this.scanner.next();
 
 		BankAccount newAccount = new BankAccount(inputName);
-		this.bankAccounts.add(newAccount);
+		this.bankAccounts.put(newAccount.getAccountID(), newAccount);
 
 		System.out.println(String.format(BankMessage.MSG_GET_ACCOUNT_ID, newAccount.getAccountID()));
 	}
@@ -110,30 +111,25 @@ public class BankManager {
 	}
 
 	private BankAccount getAccount() {
-		for (int i = 0; i < this.bankAccounts.size(); i++) {
-			BankAccount bankAccount = this.bankAccounts.get(i);
-			System.out.println(String.format(BankMessage.MSG_LIST_ACCOUNT, i, bankAccount.getOwner(),
+		
+		for (BankAccount bankAccount : this.bankAccounts.values()) {
+			System.out.println(String.format(BankMessage.MSG_LIST_ACCOUNT, bankAccount.getOwner(),
 					bankAccount.getAccountID(), bankAccount.getBalance()));
 		}
 
-		System.out.println(BankMessage.MSG_SELECT_ACCOUNT);
+		System.out.println(BankMessage.MSG_INPUT_ACCOUNT_ID);
 
-		int idx = -1;
+		int accountID = -1;
 
 		try {
 			printPrompt();
-			idx = this.scanner.nextInt();
+			accountID = this.scanner.nextInt();
 		} catch (InputMismatchException ex) {
 			System.out.println(ex.toString());
 			return null;
 		}
-
-		if (idx < 0 || idx >= this.bankAccounts.size()) {
-			System.out.println();
-			return null;
-		}
-
-		return this.bankAccounts.get(idx);
+		
+		return this.bankAccounts.get(accountID);
 	}
 	
 	private void printCurrentBalance(BankAccount bankAccount) {
