@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class BankManager {
 
 	// hashmap
-	private HashMap<Integer, BankAccount> bankAccounts = new HashMap<>();
+	private HashMap<Integer, BankAccount> bankAccounts;
 	private Scanner scanner;
 
 	public BankManager() {
@@ -17,10 +17,12 @@ public class BankManager {
 	}
 	
 	private void init() {
+		this.bankAccounts = new HashMap<>();
 		this.scanner = new Scanner(System.in);
 	}
 	
 	private void close() {
+		this.bankAccounts.clear();
 		this.scanner.close();
 	}
 
