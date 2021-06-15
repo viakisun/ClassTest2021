@@ -1,6 +1,5 @@
 package com.via.bank;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
